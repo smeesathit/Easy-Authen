@@ -25,6 +25,8 @@ class ViewController: UIViewController {
     // Create method for button action
     @IBAction func LoginButton(_ sender: Any) {
         
+        
+        
         // Get value from TextField
         strUser = userTextField.text
         strPassword = passwordTextField.text
@@ -41,10 +43,15 @@ class ViewController: UIViewController {
         print("intPassword ==> \(intPassword!)")
         
         // Call checkSpace method
-        if checkSpace(myString: strUser!) {
-            print("user OK")
+        if checkSpace(myString: strUser!) && checkSpace(myString: strPassword!){
+            print("Username & password not empty")
+            
+            messageLabel.text = ""
+            
         } else {
-            print("Blank user")
+            print("Username or Password are empty")
+            showMessage(strMessage: "Please fill in username or password!")
+            
         }
         
     } // Log in button method
@@ -54,6 +61,11 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
     }   // End main method
 
+    func showMessage(strMessage: String) -> Void {
+
+        messageLabel.text = strMessage
+    }
+    
     // Check empty string
     func checkSpace(myString: String) -> Bool {
         let intString = myString.characters.count
@@ -67,7 +79,6 @@ class ViewController: UIViewController {
         return result
     } // End checkSpace method
     
-
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
