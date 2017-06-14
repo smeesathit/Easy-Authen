@@ -86,8 +86,8 @@
                     </view>
                     <connections>
                         <outlet property="messageLabel" destination="9lM-BJ-sZ4" id="2aK-iF-bGB"/>
-                        <outlet property="passwordTextField" destination="8e4-XA-YgU" id="Xk4-aA-7hf"/>
-                        <outlet property="userTextField" destination="8e4-XA-YgU" id="1TM-3v-LhA"/>
+                        <outlet property="passwordTextField" destination="rvh-9f-YyX" id="yIm-UT-lCU"/>
+                        <outlet property="userTextField" destination="eO0-GA-XSy" id="ZYN-Wb-QmM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
