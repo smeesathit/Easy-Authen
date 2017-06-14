@@ -67,8 +67,16 @@ class ViewController: UIViewController {
     
     func checkUserAndPass(strUser: String, strPassword: String) -> Void {
         // Authen user
-        if let testUser = dicUser[strUser] { // if there is user
+        if let testUser = dicUser[strUser] { // if there is user in DB
             print("testUser ==> \(testUser)")
+            
+            if strPassword == testUser {
+                // Correct password
+                showMessage(strMessage: "Welcome to SNRU!")
+            } else {
+                // Incorrect password
+                showMessage(strMessage: "Incorrect password!")
+            }
         } else {
             print("testUser ==> nil")
             showMessage(strMessage: "No " + strUser + " in my database!")
