@@ -14,6 +14,9 @@ class ViewController: UIViewController {
     var strUser: String?
     var strPassword: String?
     
+    let dicUser = ["master": "1234", "doramon": "5678", "nobita": "1234"]
+    
+    
     
     @IBOutlet weak var userTextField: UITextField!
     
@@ -44,15 +47,16 @@ class ViewController: UIViewController {
         
         // Call checkSpace method
         if checkSpace(myString: strUser!) && checkSpace(myString: strPassword!){
+            // No empty input
             print("Username & password not empty")
-            
             messageLabel.text = ""
+            checkUserAndPass(strUser: strUser!, strPassword: strPassword!)
             
         } else {
             print("Username or Password are empty")
             showMessage(strMessage: "Please fill in username or password!")
             
-        }
+        } // End if-else
         
     } // Log in button method
     
@@ -60,6 +64,16 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
     }   // End main method
+    
+    func checkUserAndPass(strUser: String, strPassword: String) -> Void {
+        // Authen user
+        if let testUser = dicUser[strUser] { // if there is user
+            print("testUser ==> \(testUser)")
+        } else {
+            print("testUser ==> nil")
+            showMessage(strMessage: "No " + strUser + " in my database!")
+        }
+    }
 
     func showMessage(strMessage: String) -> Void {
 
